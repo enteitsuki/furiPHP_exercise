@@ -9,7 +9,6 @@ function displayMsg($top, $bottom, $height, $area) {
 EOM;
     echo $msg;
 }
-
 function calcArea($top, $bottom, $height) {
     return ($top + $bottom) * $height / 2;
 }
