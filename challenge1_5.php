@@ -5,7 +5,7 @@ $hp = 10000;
 while ($hp > 0) {
     echo '攻撃技は？' . PHP_EOL;
     foreach ($attacks as $num => $attack) {
-        echo $num . '.' . $attack;
+        echo $num . '.' . $attack . ' ';
     }
     echo PHP_EOL;
     $answer = trim(fgets(STDIN));
@@ -17,13 +17,13 @@ while ($hp > 0) {
             if ($damage >= 2000) {
                 echo 'クリティカルヒット！！' . PHP_EOL;
             }
-            $hp -= $damage;
-            echo '攻撃力' . $damage . 'の攻撃！' . PHP_EOL;
-            if ($hp > 0) {
-                echo 'HP: '. $hp . PHP_EOL;
+            if ($hp - $damage > 0) {
+                $hp -= $damage;
             } else {
-            break;
+            $hp = 0;
             }
+            echo '攻撃力' . $damage . 'の攻撃！' . PHP_EOL;
+            echo 'HP: ' . $hp . PHP_EOL;
             break;
         default:
             echo '攻撃に失敗！' . PHP_EOL;
@@ -31,4 +31,4 @@ while ($hp > 0) {
     }
 }
 
-echo 'HP: 0' . PHP_EOL . '敵を倒した!!' . PHP_EOL;
+echo '敵を倒した!!' . PHP_EOL;
