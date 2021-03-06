@@ -20,7 +20,7 @@ while ($hp > 0) {
             if ($hp - $damage > 0) {
                 $hp -= $damage;
             } else {
-            $hp = 0;
+                $hp = 0;
             }
             echo '攻撃力' . $damage . 'の攻撃！' . PHP_EOL;
             echo 'HP: ' . $hp . PHP_EOL;
